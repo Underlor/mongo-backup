@@ -13,6 +13,7 @@ ENV BACKUP_DIR_PATH=/backup \
     SCHEDULE="@daily"
 
 COPY ./backup.sh /
+RUN chmod +x C:\mongo\mongo-backup\Dockerfile
 
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["exec /usr/local/bin/go-cron -s \"$SCHEDULE\" -p \"$HEALTHCHECK_PORT\" -- /backup.sh"]
