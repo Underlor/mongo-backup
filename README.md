@@ -11,6 +11,7 @@ Environment variables
 | Env KEY         | Description                                                     |
 |-----------------|-----------------------------------------------------------------|
 | BACKUP_DIR_PATH | Dir path in container(can be useful if you want to use volumes) |
+| MONGO_URI       | Mongo uri with credentials will be used first                   |
 | MONGO_HOST      | MongoDB host(127.0.0.1:27017)                                   |
 | MONGO_PASSWORD  | MongoDB user password                                           |
 | MONGO_USERNAME  | MongoDB username                                                |
