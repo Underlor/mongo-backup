@@ -1,7 +1,10 @@
 # MongoDB Docker Backup
+
 This image can be useful for dumping mongodb placed in k8s or another orchestration and placing the backup on an external server over SSH
 
 DockerHub: https://hub.docker.com/r/underlor/mongo-backup
+
+Github: https://github.com/Underlor/mongo-backup
 
 Environment variables
 
@@ -15,6 +18,7 @@ Environment variables
 | SSH_USER        | SSH server user(root by default)                                |
 | SSH_DESTINATION | Destination dir on ssh host                                     |
 | SSH_KEY         | SSH private key                                                 |
+| SCHEDULE        | Cron schedule like: `@daily` or `0 0 * * *`                     |
 
 Example docker-compose.yml file:
 ```
@@ -32,4 +36,9 @@ services:
       - MONGO_PASSWORD=example
       - MONGO_USERNAME=root
       - SSH_KEY=SSH_PRIVATE_KEY_CONTENT
+      - SCHEDULE=@daily
 ```
+![Docker Pulls](https://img.shields.io/docker/pulls/underlor/mongo-backup)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/underlor/mongo-backup)
+
+Thanks to @prodrigestivill for the go-cron idea

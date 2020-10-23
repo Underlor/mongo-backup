@@ -21,4 +21,5 @@ else
   ssh $SSH_USER@$SSH_SERVER_IP "mkdir -p $SSH_DESTINATION;"
   echo "Uploading backup to $SSH_SERVER_IP:$SSH_DESTINATION"
   scp $backup_file $SSH_USER@$SSH_SERVER_IP:$SSH_DESTINATION
+  echo "Uploading finished"
 fi
