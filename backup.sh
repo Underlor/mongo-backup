@@ -5,9 +5,9 @@ backup_file="$BACKUP_DIR_PATH/db_$(date -u +"%FT%H:%M:%SZ").dump"
 echo "Starting backup into $backup_file"
 if [[ -z "${MONGO_URI}" ]];
 then
-  mongodump --archive --uri=$MONGO_URI > $backup_file
-else
   mongodump --archive --host $MONGO_HOST -u $MONGO_USERNAME -p $MONGO_PASSWORD > $backup_file
+else
+  mongodump --archive --uri=$MONGO_URI > $backup_file
 fi
 
 echo "Backup complete"
